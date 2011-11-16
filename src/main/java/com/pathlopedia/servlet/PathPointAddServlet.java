@@ -44,16 +44,13 @@ public final class PathPointAddServlet extends PostMethodServlet {
         if (path.getPoints().contains(point))
             return new JSONResponse(0);
 
-        // Validate that the point is placed on a corner.
-        boolean isCorner = false;
-        for (Corner corner : path.getCorners())
-            if (corner.getLocation().equals(point.getLocation())) {
-                isCorner = true;
-                break;
-            }
-        if (!isCorner)
-            throw new ServletException(
-                    "Point doesn't overlap with a corner!");
+        // Pay attention that point can already be associated with some other
+        // path. Nonetheless, we allow its owner to re-associate it with
+        // another path.
+
+        // As another side note, we don't check whether the point overlaps
+        // with a corner or not. User is free to 1) place any point on the map,
+        // and 2) associate it with any path he/she deserves.
 
         // Update the point.
         Parent parent = new Parent(path);
