@@ -11,7 +11,7 @@
         initialLocation = new google.maps.LatLng(position.coords.latitude,position.coords.longitude);
 
         map.setCenter(initialLocation);
-        $.cookie("map_center", "baba");
+        $.cookie("map_center", position.coords.latitude+'hebele'+position.coords.longitude);
         $.cookie("map_zoom_level", "14");
 
         }, function() {
