@@ -39,7 +39,7 @@ var p9a = {
                         var newCenterCoord = JSON.parse(centerCoordStr);
                         that.setMapCenter(newCenterCoord.x, newCenterCoord.y);
                     } else {
-                    // Oops! Move user to a particular location we choose.
+                    // Move user to a particular location we choose.
                     that.setMapCenter(41.023362521843865, 28.9874267578125); /* Galata/İstanbul */
                     }
 
