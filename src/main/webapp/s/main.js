@@ -430,7 +430,6 @@ var p9a = {
 				}
 				index = null;
 	},
-
     initPolyline: function() {
 				var polyOptions = {
 					strokeColor: "#3355FF",
